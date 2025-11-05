@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact</title>
+  <link rel="stylesheet" href="./Sytle.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+/* Footer CSS */
+footer {
+  background-color: #2b2730; /* iyong dark background */
+  color: #e5e5e5; /* text color */
+  text-align: center;
+  padding: 0 0; /* binawasan para hindi masyadong mataas */
+  font-size: 14px;
+  line-height: 1.6; /* spacing ng lines */
+  border-top: 3px solid #7a2cf0; /* iyong purple line sa taas */
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 4px 0; /* maliit na pagitan bawat linya */
+}
+
+footer a {
+  color: #b982f9;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+  </style>
+</head>
+<body>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor"></div>
+  <div class="cursor-outline"></div>
+
+  <!-- MAIN CONTENT -->
+  <div id="main-content">
+    <header class="fade-down">
+      <div class="logo">WEB PORTFOLIO</div>
+      <nav>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="contact" class="contact-section">
+      <h1>Get in Contact</h1>
+      <p class="contact-intro">
+        Let's connect! Feel free to reach out if you have questions, collaborations 
+        or just want to talk about tech and design.
+      </p>
+
+      <div class="contact-info">
+        <p><strong>Email:</strong> <a href="mailto:20240089@cstc.edu.ph">20240089@cstc.edu.ph</a></p>
+        <p><strong>Phone:</strong> (+63) 991 547 6485</p>
+        <p><strong>Location:</strong> Sariaya Quezon</p>
+      </div>
+
+      <div class="social-links">
+        <a href="https://facebook.com/" target="_blank">Facebook</a>
+        <a href="https://github.com/" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+      </div>
+
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </div>
+
+<footer>
+  <p>© 2025 Izzy Nicole M. Limbo | All Rights Reserved</p>
+  <p>
+    Number: (+63) 991 547 6484 | 
+    Email: <a href="mailto:nicolelimbo@gmail.com">nicolelimbo@gmail.com</a> | 
+    Facebook: 
+    <a href="https://www.facebook.com/share/1FiwDih2Xe/" target="_blank" rel="noopener noreferrer" aria-label="Open Izzy Nicole's Facebook profile">
+      Izzy Nicole
+    </a>
+  </p>
+</footer>
+
+  <!-- JS -->
+  <script>
+    // Show main content after page load
+    window.addEventListener('load', () => {
+      document.getElementById('main-content').classList.add('show');
+    });
+
+    // CUSTOM CURSOR
+    (function(){
+      const inner = document.querySelector('.cursor');
+      const outer = document.querySelector('.cursor-outline');
+      if(!inner || !outer) return;
+
+      let mouseX = window.innerWidth/2, mouseY = window.innerHeight/2;
+      let outerX = mouseX, outerY = mouseY;
+
+      window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        inner.style.transform = `translate3d(${mouseX - 5}px, ${mouseY - 5}px, 0)`;
+      });
+
+      function animateOuter(){
+        outerX += (mouseX - outerX) * 0.12;
+        outerY += (mouseY - outerY) * 0.12;
+        outer.style.transform = `translate3d(${outerX - 20}px, ${outerY - 20}px, 0)`;
+        requestAnimationFrame(animateOuter);
+      }
+      animateOuter();
+
+      const interactive = document.querySelectorAll('a, button, .btn, .contact-btn, .social-links a, .footer-socials a');
+      interactive.forEach(node => {
+        node.addEventListener('mouseenter', () => {
+          outer.style.transform += ' scale(1.2)';
+          inner.style.transform += ' scale(0.8)';
+        });
+        node.addEventListener('mouseleave', () => {
+          inner.style.transform = `translate3d(${mouseX - 5}px, ${mouseY - 5}px, 0)`;
+          outer.style.transform = `translate3d(${outerX - 20}px, ${outerY - 20}px, 0)`;
+        });
+      });
+
+      document.documentElement.style.cursor = 'none';
+    })();
+  </script>
+</body>
+</html>

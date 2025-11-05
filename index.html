@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <link rel="stylesheet" href="./Sytle.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* Footer CSS */
+footer {
+  background-color: #2b2730; /* iyong dark background */
+  color: #e5e5e5; /* text color */
+  text-align: center;
+  padding: 0 0; /* binawasan para hindi masyadong mataas */
+  font-size: 14px;
+  line-height: 1.6; /* spacing ng lines */
+  border-top: 3px solid #7a2cf0; /* iyong purple line sa taas */
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 4px 0; /* maliit na pagitan bawat linya */
+}
+
+footer a {
+  color: #b982f9;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+    footer.show {
+      opacity: 1; /* show when preloader ends */
+    }
+
+    /* Preloader fade-out animation */
+    #preloader.fade-out {
+      opacity: 0;
+      transition: opacity 0.9s ease;
+    }
+
+    #main-content {
+      display: none; /* start hidden */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor"></div>
+  <div class="cursor-outline"></div>
+
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="loader-content">
+      <img src="./SIT.webp" alt="Logo" class="logo-load" />
+      <h2>Izzy Nicole M. Limbo</h2>
+      <p>Bachelor of Science in Information Technology | 2nd Year | Web Developer</p>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div id="main-content">
+    <header class="fade-down">
+      <div class="logo">WEB PORTFOLIO</div>
+      <nav>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-left fade-up">
+        <p class="intro">I am</p>
+        <h1>Izzy Nicole M. Limbo</h1>
+        <p class="role">and a 2nd Year College Student <span class="typing-text" aria-live="polite"></span></p>
+        <a href="#" class="btn">Click Socials</a>
+
+        <div class="socials">
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+          </a>
+          <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
+          </a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-center fade-in">
+        <div class="photo-circle" aria-hidden="true">
+          <img src="./Izzy.Resume.jpg" alt="Izzy Nicole M. Limbo">
+        </div>
+      </div>
+
+      <div class="hero-right fade-up-delay">
+        <h3>DEDICATED</h3>
+        <h2>IT STUDENT</h2>
+        <p>
+          A highly motivated <b>Bachelor of Science in Information Technology Student</b> 
+          believe high and always be at your best. As an IT student who aspires to explore 
+          the world of IT professionals, I strive to achieve success with dedication and passion. 
+          In every moment of challenge, I envision myself growing through perseverance and learning.
+        </p>
+      </div>
+    </section>
+
+<footer>
+  <p>© 2025 Izzy Nicole M. Limbo | All Rights Reserved</p>
+  <p>
+    Number: (+63) 991 547 6484 | 
+    Email: <a href="mailto:nicolelimbo@gmail.com">nicolelimbo@gmail.com</a> | 
+    Facebook: 
+    <a href="https://www.facebook.com/share/1FiwDih2Xe/" target="_blank" rel="noopener noreferrer" aria-label="Open Izzy Nicole's Facebook profile">
+      Izzy Nicole
+    </a>
+  </p>
+</footer>
+
+  <!-- JS -->
+  <script>
+    // PRELOADER
+    window.addEventListener("load", () => {
+      const preloader = document.getElementById("preloader");
+      const main = document.getElementById("main-content");
+      const footer = document.getElementById("footer");
+
+      // delay for preloader
+      setTimeout(() => {
+        preloader.classList.add("fade-out");
+
+        setTimeout(() => {
+          preloader.style.display = "none";  // hide preloader
+          main.style.display = "block";      // show main content
+          footer.classList.add("show");       // fade-in footer
+          document.body.style.overflow = "";  // enable scroll
+        }, 900);
+
+      }, 2000);
+    });
+
+    // TYPING EFFECT
+    (function(){
+      const words = ["Web Developer"];
+      const el = document.querySelector('.typing-text');
+      let idx = 0, charIdx = 0, adding = true;
+
+      function tick(){
+        const current = words[idx];
+        if(adding){
+          charIdx++;
+          el.textContent = current.slice(0, charIdx);
+          if(charIdx === current.length){
+            adding = false;
+            setTimeout(tick, 1000);
+            return;
+          }
+        } else {
+          charIdx--;
+          el.textContent = current.slice(0, charIdx);
+          if(charIdx === 0){
+            adding = true;
+            idx = (idx + 1) % words.length;
+          }
+        }
+        setTimeout(tick, adding ? 80 : 40);
+      }
+      if(el) tick();
+    })();
+
+ // CUSTOM CURSOR (Desktop only)
+(function() {
+  const inner = document.querySelector('.cursor');
+  const outer = document.querySelector('.cursor-outline');
+  if (!inner || !outer) return;
+
+  // Check if device supports hover (desktop)
+  const isTouchDevice = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+  if (isTouchDevice) {
+    // Hide cursor sa mobile devices
+    inner.style.display = 'none';
+    outer.style.display = 'none';
+    document.documentElement.style.cursor = 'auto';
+    return; // Stop script execution
+  }
+
+  // ---- Desktop Cursor Animation ----
+  let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+  let outerX = mouseX, outerY = mouseY;
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    inner.style.transform = `translate3d(${mouseX - 5}px, ${mouseY - 5}px, 0)`;
+  });
+
+  function animateOuter() {
+    outerX += (mouseX - outerX) * 0.12;
+    outerY += (mouseY - outerY) * 0.12;
+    outer.style.transform = `translate3d(${outerX - 20}px, ${outerY - 20}px, 0)`;
+    requestAnimationFrame(animateOuter);
+  }
+  animateOuter();
+
+  const interactive = document.querySelectorAll('a, button, .btn, .contact-btn, .socials a');
+  interactive.forEach(node => {
+    node.addEventListener('mouseenter', () => {
+      outer.style.transform += ' scale(1.2)';
+      inner.style.transform += ' scale(0.8)';
+    });
+    node.addEventListener('mouseleave', () => {
+      inner.style.transform = `translate3d(${mouseX - 5}px, ${mouseY - 5}px, 0)`;
+      outer.style.transform = `translate3d(${outerX - 20}px, ${outerY - 20}px, 0)`;
+    });
+  });
+
+  document.documentElement.style.cursor = 'none';
+})();
+  </script>
+  <script>
+document.querySelector('.btn').addEventListener('click', function(event) {
+  event.preventDefault(); // para hindi mag-refresh ang page
+  const socials = document.querySelector('.socials');
+  socials.classList.toggle('show');
+});
+</script>
+</body>
+</html>
