@@ -115,7 +115,6 @@ nav a.active, nav a:hover { color: lightskyblue; }
   min-height: calc(100vh - 120px);
 }
 
-/* left column */
 .hero-left { flex: 1; min-width: 260px; max-width: 520px; }
 .hero-left .intro { color: #bdbdbd; font-size: 1.05rem; margin-bottom: 6px; }
 .hero-left h1 { font-size: 2.6rem; color: #fff; margin: 6px 0 8px; line-height: 1.05; transition: color 0.25s; }
@@ -135,7 +134,6 @@ nav a.active, nav a:hover { color: lightskyblue; }
 }
 .btn:hover { background-color: #2ebdff; transform: translateY(-3px); }
 
-/* socials */
 .socials { margin-top: 18px; display: flex; gap: 14px; align-items: center; }
 .socials img { width: 36px; height: 36px; border-radius: 8px; display: block; transition: transform 0.18s, box-shadow 0.18s; }
 .socials img:hover { transform: translateY(-4px); box-shadow: 0 6px 18px rgba(255,46,46,0.24); }
@@ -176,7 +174,7 @@ nav a.active, nav a:hover { color: lightskyblue; }
     height: 55px;
   }
 }
-/* center image */
+
 .hero-center { flex: 0 0 280px; display: flex; justify-content: center; align-items: center; min-width: 200px; }
 .photo-circle {
   background: linear-gradient(180deg, gray,rgb(157, 7, 157));
@@ -193,7 +191,6 @@ nav a.active, nav a:hover { color: lightskyblue; }
 .photo-circle:hover { transform: scale(1.04); box-shadow: 0 0 38px rgba(220, 46, 255, 0.28); }
 .photo-circle img { width: 220px; height: 220px; border-radius: 50%; object-fit: cover; }
 
-/* right column */
 .hero-right { flex: 1; min-width: 260px; max-width: 480px; text-align: left; }
 .hero-right h3 { color: Blue; font-size: 0.95rem; letter-spacing: 1px; margin-bottom: 6px; }
 .hero-right h2 { font-size: 1.6rem; color: #fff; margin-bottom: 10px; transition: color 0.2s; }
@@ -1413,3 +1410,4 @@ font-weight: 500;
     font-size: 1rem;
   }
 }
+
