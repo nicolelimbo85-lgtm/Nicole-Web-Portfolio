@@ -7,22 +7,21 @@
   <link rel="stylesheet" href="./Sytle.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-/* Footer CSS */
 footer {
-  background-color: #2b2730; /* iyong dark background */
-  color: #e5e5e5; /* text color */
+  background-color: #2b2730;
+  color: #e5e5e5;
   text-align: center;
-  padding: 0 0; /* binawasan para hindi masyadong mataas */
+  padding: 0 0; 
   font-size: 14px;
-  line-height: 1.6; /* spacing ng lines */
-  border-top: 3px solid #7a2cf0; /* iyong purple line sa taas */
+  line-height: 1.6; 
+  border-top: 3px solid #7a2cf0; 
   position: relative;
   bottom: 0;
   width: 100%;
 }
 
 footer p {
-  margin: 4px 0; /* maliit na pagitan bawat linya */
+  margin: 4px 0;
 }
 
 footer a {
@@ -38,11 +37,9 @@ footer a:hover {
 </head>
 <body>
 
-  <!-- CUSTOM CURSOR -->
   <div class="cursor"></div>
   <div class="cursor-outline"></div>
 
-  <!-- MAIN CONTENT -->
   <div id="main-content">
     <header class="fade-down">
       <div class="logo">WEB PORTFOLIO</div>
@@ -95,14 +92,12 @@ footer a:hover {
   </p>
 </footer>
 
-  <!-- JS -->
   <script>
     // Show main content after page load
     window.addEventListener('load', () => {
       document.getElementById('main-content').classList.add('show');
     });
 
-    // CUSTOM CURSOR
     (function(){
       const inner = document.querySelector('.cursor');
       const outer = document.querySelector('.cursor-outline');
