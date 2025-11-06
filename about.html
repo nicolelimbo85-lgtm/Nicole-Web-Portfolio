@@ -7,23 +7,21 @@
   <link rel="stylesheet" href="./Sytle.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-
-/* Footer CSS */
 footer {
-  background-color: #2b2730; /* iyong dark background */
-  color: #e5e5e5; /* text color */
+  background-color: #2b2730;
+  color: #e5e5e5;
   text-align: center;
-  padding: 0 0; /* binawasan para hindi masyadong mataas */
+  padding: 0 0;
   font-size: 14px;
-  line-height: 1.6; /* spacing ng lines */
-  border-top: 3px solid #7a2cf0; /* iyong purple line sa taas */
+  line-height: 1.6;
+  border-top: 3px solid #7a2cf0;
   position: relative;
   bottom: 0;
   width: 100%;
 }
 
 footer p {
-  margin: 4px 0; /* maliit na pagitan bawat linya */
+  margin: 4px 0;
 }
 
 footer a {
@@ -75,33 +73,28 @@ footer a:hover {
       </div>
     </section>
 
- <!-- SKILLS SECTION -->
 <section id="skills" class="skills-section"> 
   <h1>Skills</h1>
   <div class="skills">
 
-    <!-- Visual Studio Code -->
     <div class="skill">
       <img src="https://cdn.iconscout.com/icon/free/png-256/free-visual-studio-code-3251603-2724650.png" alt="VS Code">
       <h3>Visual Studio Code</h3>
       <p>Main code editor for projects</p>
     </div>
 
-    <!-- HTML -->
     <div class="skill">
       <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML">
       <h3>HTML</h3>
       <p>Building the structure of web pages</p>
     </div>
 
-    <!-- CSS -->
     <div class="skill">
       <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS">
       <h3>CSS</h3>
       <p>Designing and styling web layouts</p>
     </div>
 
-    <!-- Microsoft Excel -->
     <div class="skill">
       <img src="https://cdn-icons-png.flaticon.com/512/732/732220.png" alt="Microsoft Excel" style="filter: hue-rotate(120deg);">
       <h3>Microsoft Excel</h3>
@@ -109,7 +102,6 @@ footer a:hover {
     </div>
   </div>
 
-  <!-- Separate row for AI & Word -->
   <div class="skills bottom-skills">
     <!-- Adobe Illustrator -->
     <div class="skill">
@@ -118,7 +110,6 @@ footer a:hover {
       <p>Designing logos, vector graphics, and creative layouts</p>
     </div>
 
-    <!-- Microsoft Word -->
     <div class="skill">
       <img src="https://cdn-icons-png.flaticon.com/512/732/732223.png" alt="Microsoft Word" style="filter: hue-rotate(220deg);">
       <h3>Microsoft Word</h3>
@@ -127,7 +118,6 @@ footer a:hover {
   </div>
 </section>
 
-    <!-- EDUCATION SECTION -->
     <section id="education" class="education-section">
       <h2>Educational Background</h2>
       <div class="education">
@@ -162,7 +152,6 @@ footer a:hover {
       </div>
     </section>
 
-    <!-- ACHIEVEMENTS SECTION -->
     <section id="achievements" class="achievements-section">
       <div class="achievements-container">
         <h2>Academic Achievements</h2>
@@ -185,7 +174,6 @@ footer a:hover {
       </div>
     </section>
 
-<!-- HOBBIES SECTION -->
 <section class="hobbies" id="hobbies">
   <h2>Hobbies</h2>
   <div class="hobby-container">
@@ -221,7 +209,6 @@ footer a:hover {
 </footer>
 
 <script>
-  // ===== BUTTON TOGGLE LOGIC =====
   const buttons = document.querySelectorAll("#about-buttons button");
   const sections = {
     about: document.querySelector("#about"),
@@ -232,44 +219,37 @@ footer a:hover {
   };
   const footer = document.querySelector("#footer");
 
-  // ✅ Show ABOUT section first, hide others
   Object.keys(sections).forEach((key) => {
     sections[key].style.display = (key === "about") ? "" : "none";
   });
 
-  // When a button is clicked
   buttons.forEach(btn => {
     btn.addEventListener("click", () => {
       const target = btn.getAttribute("data-target");
 
-      // Hide all sections except target
       Object.keys(sections).forEach(k => {
         sections[k].style.display = (k === target ? "" : "none");
       });
 
-      // Active button highlight
       buttons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
 
-      // ===== FOOTER VISIBILITY + SPACING FIX =====
       if (target === "hobbies") {
         footer.style.display = "block";
         footer.classList.add("show");
-        document.body.style.paddingBottom = "0px"; // walang extra space sa hobbies
+        document.body.style.paddingBottom = "0px"; 
       } else {
         footer.style.display = "none";
         footer.classList.remove("show");
-        document.body.style.paddingBottom = "60px"; // ✅ mas natural na spacing (di sagad)
+        document.body.style.paddingBottom = "60px";
       }
     });
   });
 
-  // ===== FOOTER FADE-IN ANIMATION =====
   window.addEventListener("load", () => {
     footer.classList.remove("show"); // hide on page load
   });
 
-  // ===== CUSTOM CURSOR =====
   (function() {
     const inner = document.querySelector('.cursor');
     const outer = document.querySelector('.cursor-outline');
@@ -307,7 +287,6 @@ footer a:hover {
     document.documentElement.style.cursor = 'none';
   })();
 
-  // ================= SOCIALS TOGGLE BUTTON =================
   document.addEventListener("DOMContentLoaded", function() {
     const socialsBtn = document.querySelector(".socials-btn");
     const socials = document.querySelector(".socials");
@@ -322,4 +301,5 @@ footer a:hover {
 </script>
 
 </body>
+
 </html>
