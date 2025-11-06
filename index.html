@@ -8,22 +8,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* Footer CSS */
 footer {
-  background-color: #2b2730; /* iyong dark background */
-  color: #e5e5e5; /* text color */
+  background-color: #2b2730; 
+  color: #e5e5e5; 
   text-align: center;
-  padding: 0 0; /* binawasan para hindi masyadong mataas */
+  padding: 0 0;
   font-size: 14px;
-  line-height: 1.6; /* spacing ng lines */
-  border-top: 3px solid #7a2cf0; /* iyong purple line sa taas */
+  line-height: 1.6; 
+  border-top: 3px solid #7a2cf0; 
   position: relative;
   bottom: 0;
   width: 100%;
 }
 
 footer p {
-  margin: 4px 0; /* maliit na pagitan bawat linya */
+  margin: 4px 0;
 }
 
 footer a {
@@ -37,7 +36,7 @@ footer a:hover {
 }
 
     footer.show {
-      opacity: 1; /* show when preloader ends */
+      opacity: 1; 
     }
 
     /* Preloader fade-out animation */
@@ -47,7 +46,7 @@ footer a:hover {
     }
 
     #main-content {
-      display: none; /* start hidden */
+      display: none;
     }
   </style>
 </head>
@@ -142,10 +141,10 @@ footer a:hover {
         preloader.classList.add("fade-out");
 
         setTimeout(() => {
-          preloader.style.display = "none";  // hide preloader
-          main.style.display = "block";      // show main content
-          footer.classList.add("show");       // fade-in footer
-          document.body.style.overflow = "";  // enable scroll
+          preloader.style.display = "none";  
+          main.style.display = "block";      
+          footer.classList.add("show");       
+          document.body.style.overflow = "";  
         }, 900);
 
       }, 2000);
@@ -237,4 +236,5 @@ document.querySelector('.btn').addEventListener('click', function(event) {
 });
 </script>
 </body>
+
 </html>
