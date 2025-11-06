@@ -828,7 +828,7 @@ h1 {
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* 🌟 soft shadow */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
 }
 
 .skill:hover {
@@ -847,12 +847,11 @@ h1 {
   transform: scale(1.1);
 }
 
-/* Bottom row (Word + Illustrator) */
 .bottom-skills {
   display: flex;
   justify-content: center;
   gap: 40px;
-  margin-top: 10px; /* dikit sa taas */
+  margin-top: 10px; 
 }
 
 .skill h3 {
@@ -873,7 +872,7 @@ h1 {
   margin-bottom: 40px;
 }
 
-/* 🔹 RESPONSIVE DESIGN */
+/*RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
   .skills {
     gap: 25px;
@@ -1037,7 +1036,6 @@ section {
   line-height: 1.6;
 }
 
-/* ========== GRID LAYOUT FOR RESPONSIVE CARDS ========== */
 .acads-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -1066,7 +1064,7 @@ section {
 .acads img {
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 3; /* keeps consistent proportions */
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 12px;
   transition: transform 0.4s ease, filter 0.4s ease;
@@ -1084,7 +1082,6 @@ section {
   color: #f1f1f1;
 }
 
-/* ========== RESPONSIVE DESIGN FIXES ========== */
 @media (max-width: 1024px) {
   .elevate-section {
     padding: 35px 25px;
@@ -1116,7 +1113,7 @@ section {
   }
 
   .acads-container {
-    grid-template-columns: 1fr; /* single column for mobile */
+    grid-template-columns: 1fr;
   }
 
   .acads {
@@ -1194,7 +1191,7 @@ font-weight: 500;
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
-  margin: 40px auto 120px auto; /* dagdag na bottom space */
+  margin: 40px auto 120px auto;
   width: 90%;
   max-width: 900px;
   position: relative;
@@ -1229,7 +1226,7 @@ font-weight: 500;
 @media (max-width: 768px) {
   .about-buttons {
     gap: 12px;
-    margin: 30px auto 40px auto; /* mas maliit spacing sa mobile */
+    margin: 30px auto 40px auto;
   }
 
   .about-buttons button {
@@ -1258,16 +1255,14 @@ font-weight: 500;
   line-height: 1.8;
 }
 
-/* CONTACT INFO */
 #contact {
   text-align: center;
-  color: #fff; /* ✅ makes all text inside white by default */
+  color: #fff; 
   padding: 60px 20px;
 }
 
-/* specifically style the heading */
 #contact h1 {
-  color: #ffffff; /* ✅ white Contact Me */
+  color: #ffffff;
   font-size: 2.5rem;
   margin-bottom: 20px;
   letter-spacing: 1px;
@@ -1359,7 +1354,7 @@ font-weight: 500;
   color: #000;
   transform: scale(1.05);
 }
-/* ========== RESPONSIVE DESIGN ========== */
+/*RESPONSIVE DESIGN*/
 @media (max-width: 1024px) {
   .contact-section {
     padding: 70px 8%;
